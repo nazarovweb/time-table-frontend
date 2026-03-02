@@ -22,9 +22,11 @@ const DAYS = [
     { num: 3, label: "Chorshanba" },
     { num: 4, label: "Payshanba" },
     { num: 5, label: "Juma" },
+    { num: 6, label: "Shanba" },
+    { num: 7, label: "Yakshanba" },
 ];
 
-const ORDERS = [1, 2, 3, 4, 5, 6];
+const ORDERS = [1, 2, 3, 4, 5, 6, 7];
 
 export default function AdminPage() {
     const [mode, setMode] = useState<"group" | "teacher">("group");
