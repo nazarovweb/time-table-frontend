@@ -81,7 +81,7 @@ export default function AcademicPage() {
 
     const handleUpdateGroup = async (group_id: number, data: any) => {
         try {
-            await fetch(`http://localhost:3000/groups/${group_id}`, {
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/groups/${group_id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
