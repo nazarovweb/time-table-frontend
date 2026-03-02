@@ -14,9 +14,11 @@ export interface Group {
     specialization_id: number | null;
 }
 
+
 export interface Lesson {
     lesson_id: number;
     title: string;
+    type:number
 }
 
 export interface Room {
@@ -230,5 +232,10 @@ export async function generateTimetable(finalize = false): Promise<any> {
         },
         body: JSON.stringify({ finalize })
     });
+    return res.json();
+}
+
+export async function getLessons(): Promise<Lesson[]> {
+    const res = await fetch(`${BASE_URL}/lessons`);
     return res.json();
 }

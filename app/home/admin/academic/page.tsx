@@ -11,7 +11,8 @@ import {
     CurriculumItem,
     getGroups,
     Group,
-    Lesson
+    Lesson,
+    getLessons
 } from "@/lib/api";
 import { toast } from "@/components/Toast";
 
@@ -33,7 +34,7 @@ export default function AcademicPage() {
     const refreshData = () => {
         getSpecializations().then(setSpecs);
         getGroups().then(setGroups);
-        fetch("http://localhost:3000/lessons").then(r => r.json()).then(setLessons);
+        getLessons().then(setLessons);
     };
 
     useEffect(() => {
